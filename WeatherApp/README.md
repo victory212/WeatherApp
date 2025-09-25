@@ -38,4 +38,4 @@ This project demonstrates SOLID principles, dependency injection, and includes u
 ## 🚀 Running the App
 1. Clone the repo:  
    ```bash
-   git clone https://github.com/<your-username>/WeatherApp.git
+   git clone https://github.com/victory212/WeatherApp.git
