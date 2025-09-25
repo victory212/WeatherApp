@@ -35,15 +35,20 @@ final class HomeViewModel: ObservableObject {
             return
         }
 
-        isLoading = true
+        withAnimation {
+            isLoading = true
+        }
         errorMessage = nil
+        
         do {
             let resp = try await weatherService.fetchWeather(for: trimmed)
             self.weather = resp
         } catch {
             errorMessage = error.localizedDescription
         }
-        isLoading = false
+        withAnimation {
+            isLoading = false
+        }
     }
 
     func saveFavorite() {

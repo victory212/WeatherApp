@@ -9,8 +9,9 @@
 import SwiftUI
 
 struct WeatherDetailView: View {
+    @Environment(\.colorScheme) private var colorScheme
     let viewModel: WeatherViewModel
-
+    
     var body: some View {
         VStack(spacing: 20) {
             Text(viewModel.cityName)
@@ -20,8 +21,16 @@ struct WeatherDetailView: View {
             Text(viewModel.tempCelsius)
                 .font(.title)
                 .bold()
+
         }
-        .padding()
+        .padding(16)
+        .frame(maxHeight: .infinity)
+        .background(
+            Image(.lightWeather)
+                .resizable()
+                .scaledToFill()
+        )
+        .ignoresSafeArea()
         .navigationTitle("Weather Detail")
     }
 }
