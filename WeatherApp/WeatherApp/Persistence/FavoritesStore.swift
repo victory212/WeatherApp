@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class FavoritesStore {
+class FavoritesStore {
     private let key = "favoriteCity"
     private let defaults: UserDefaults
 
